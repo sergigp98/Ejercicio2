@@ -22,21 +22,22 @@ public class Ejercicio2 {
         // TODO code application logic here
         String [] diassemana= {"Lunes","Martes","Miercoles","Jueves","Viernes"};
         String hora;
+        int minutos;
+        
         String aux;
         Scanner sc = new Scanner(System.in);
         
-        System.out.print("Introduce el dia: ");
-        
-      
+        System.out.print("Introduce el dia: ");          
         
         aux = sc.nextLine();
         
-        if(aux.equals(diassemana[0])){
-            hora = sc.nextLine();
-            
-            
-        }
+        System.out.println("Introduce la hora: ");
+        hora = sc.nextLine();
+        String[] parts = hora.split(":");
+        String part1 = parts[0];
+        minutos = Integer.parseInt(part1);
         
+       
         
         
     }
