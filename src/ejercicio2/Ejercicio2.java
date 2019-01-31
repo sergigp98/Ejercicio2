@@ -10,6 +10,7 @@ package ejercicio2;
  * @author Usuario DAM 1
  */
 import java.util.Scanner;
+import java.text.DecimalFormat;
 
 public class Ejercicio2 {
 
@@ -25,6 +26,8 @@ public class Ejercicio2 {
         int minutostotales = (4 * 24 * 60) + (15 * 60);
         int calculo = 0;
         int minutosfinales;
+        boolean salir = true;
+        DecimalFormat punto = new DecimalFormat("###,###.##");
 
         String aux;
         Scanner sc = new Scanner(System.in);
@@ -32,15 +35,6 @@ public class Ejercicio2 {
         System.out.print("Introduce el dia: ");
 
         aux = sc.nextLine();
-
-        System.out.print("Introduce la hora: ");
-        hora = sc.nextLine();
-        String[] parts = hora.split(":");
-        String part1 = parts[0];
-        String part2 = parts[1];
-
-        horas = Integer.parseInt(part1); //Pasa horas a entero
-        minutos = Integer.parseInt(part2); //Pasa minutos a entero y suma horas
 
         int i = 0;
 
@@ -58,12 +52,28 @@ public class Ejercicio2 {
 
         } else if (aux.equals("Viernes")) {
             i = 4;
+        } else if (aux.equals("Sábado")) {
+
+            salir = false;
+
+        } else if (aux.equals("Domingo")) {
+            salir = false;
+
         }
+        if (salir = true) {
+            System.out.print("Introduce la hora: ");
+            hora = sc.nextLine();
+            String[] parts = hora.split(":");
+            String part1 = parts[0];
+            String part2 = parts[1];
 
-        calculo = (horas*60)+(i*24*60)+minutos;
+            horas = Integer.parseInt(part1); //Pasa horas a entero
+            minutos = Integer.parseInt(part2); //Pasa minutos a entero y suma horas
 
-        System.out.println(minutosfinales = minutostotales - calculo);
+            calculo = (horas * 60) + (i * 24 * 60) + minutos;
 
+            System.out.println("Faltan " + punto.format(minutosfinales = minutostotales - calculo) + " minutos para el fin de semana");
+        }
     }
 
 }
