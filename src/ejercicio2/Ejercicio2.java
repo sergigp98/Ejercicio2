@@ -16,30 +16,54 @@ public class Ejercicio2 {
     /**
      * @param args the command line arguments
      */
-    
-   
     public static void main(String[] args) {
         // TODO code application logic here
-        String [] diassemana= {"Lunes","Martes","Miercoles","Jueves","Viernes"};
+
         String hora;
+        int horas;
         int minutos;
-        
+        int minutostotales = (4 * 24 * 60) + (15 * 60);
+        int calculo = 0;
+        int minutosfinales;
+
         String aux;
         Scanner sc = new Scanner(System.in);
-        
-        System.out.print("Introduce el dia: ");          
-        
+
+        System.out.print("Introduce el dia: ");
+
         aux = sc.nextLine();
-        
-        System.out.println("Introduce la hora: ");
+
+        System.out.print("Introduce la hora: ");
         hora = sc.nextLine();
         String[] parts = hora.split(":");
         String part1 = parts[0];
-        minutos = Integer.parseInt(part1);
-        
-       
-        
-        
+        String part2 = parts[1];
+
+        horas = Integer.parseInt(part1); //Pasa horas a entero
+        minutos = Integer.parseInt(part2); //Pasa minutos a entero y suma horas
+
+        int i = 0;
+
+        if (aux.equals("Lunes")) {
+            i = 0;
+
+        } else if (aux.equals("Martes")) {
+            i = 1;
+
+        } else if (aux.equals("Miercoles")) {
+            i = 2;
+
+        } else if (aux.equals("Jueves")) {
+            i = 3;
+
+        } else if (aux.equals("Viernes")) {
+            i = 4;
+        }
+
+        calculo = (horas*60)+(i*24*60)+minutos;
+
+        System.out.println(minutosfinales = minutostotales - calculo);
+
     }
-    
+
 }
