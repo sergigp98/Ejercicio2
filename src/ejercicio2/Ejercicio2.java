@@ -35,38 +35,41 @@ public class Ejercicio2 {
         System.out.print("Introduce el dia: ");
 
         aux = sc.nextLine();
-
-        int i = 0;
-
-        if (aux.equals("Lunes")) {
-            i = 0;
-
-        } else if (aux.equals("Martes")) {
-            i = 1;
-
-        } else if (aux.equals("Miercoles")) {
-            i = 2;
-
-        } else if (aux.equals("Jueves")) {
-            i = 3;
-
-        } else if (aux.equals("Viernes")) {
-            i = 4;
-        } else if (aux.equals("Sábado")) {
-            salir = false;
-
-        } else if (aux.equals("Domingo")) {
-            salir = false;
-
-        }
-        if (salir = true) {
-            System.out.print("Introduce la hora: ");
+        
+        System.out.print("Introduce la hora: ");
             hora = sc.nextLine();
             String[] parts = hora.split(":");
             String part1 = parts[0];
             String part2 = parts[1];
 
             horas = Integer.parseInt(part1); //Pasa horas a entero
+
+        int i = 0;
+
+        if (aux.equalsIgnoreCase("Lunes")) {
+            i = 0;
+
+        } else if (aux.equalsIgnoreCase("Martes")) {
+            i = 1;
+
+        } else if (aux.equalsIgnoreCase("Miercoles")) {
+            i = 2;
+
+        } else if (aux.equalsIgnoreCase("Jueves")) {
+            i = 3;
+
+        } else if (aux.equalsIgnoreCase("Viernes")) {            
+            i = 4;
+            if(horas>=15){
+                salir=false;
+            }
+      
+        } else if (aux.equalsIgnoreCase("Domingo")||aux.equalsIgnoreCase("Sabado")) {
+            salir = false;
+
+        }
+        if (salir == true) {
+            
             minutos = Integer.parseInt(part2); //Pasa minutos a entero 
 
             calculo = (horas * 60) + (i * 24 * 60) + minutos;
