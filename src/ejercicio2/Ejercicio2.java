@@ -53,7 +53,6 @@ public class Ejercicio2 {
         } else if (aux.equals("Viernes")) {
             i = 4;
         } else if (aux.equals("Sábado")) {
-
             salir = false;
 
         } else if (aux.equals("Domingo")) {
@@ -68,7 +67,7 @@ public class Ejercicio2 {
             String part2 = parts[1];
 
             horas = Integer.parseInt(part1); //Pasa horas a entero
-            minutos = Integer.parseInt(part2); //Pasa minutos a entero y suma horas
+            minutos = Integer.parseInt(part2); //Pasa minutos a entero 
 
             calculo = (horas * 60) + (i * 24 * 60) + minutos;
 
